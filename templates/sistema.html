@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="green-text">Sistema de Gestión Ambiental</h3>
+<p>Selecciona las acciones que ya practicas:</p>
+
+
+<form method="post">
+<p><label><input type="checkbox" name="acciones" value="Agua"><span>Ahorrar agua</span></label></p>
+<p><label><input type="checkbox" name="acciones" value="Energía"><span>Ahorrar energía</span></label></p>
+<p><label><input type="checkbox" name="acciones" value="Reciclaje"><span>Separar residuos</span></label></p>
+
+
+<button class="btn green waves-effect waves-light" type="submit">
+Evaluar<i class="material-icons right">check</i>
+</button>
+</form>
+
+
+{% if acciones %}
+<div class="card-panel green lighten-4">
+<strong>Excelente 🌱</strong><br>
+Ya aplicas prácticas de un SGA: {{ acciones | join(', ') }}
+</div>
+{% endif %}
+{% endblock %}

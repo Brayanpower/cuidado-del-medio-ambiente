@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 class="green-text">¿Qué futuro le estamos dejando al planeta?</h3>
+<p>Responde este breve cuestionario ambiental:</p>
+
+<form method="post">
+
+  <p><strong>1. ¿Ahorras agua en casa?</strong></p>
+  <p>
+    <label><input type="radio" name="agua" value="si"><span>Sí</span></label>
+  </p>
+  <p>
+    <label><input type="radio" name="agua" value="no"><span>No</span></label>
+  </p>
+
+  <p><strong>2. ¿Apagas luces y aparatos que no usas?</strong></p>
+  <p>
+    <label><input type="radio" name="energia" value="si"><span>Sí</span></label>
+  </p>
+  <p>
+    <label><input type="radio" name="energia" value="no"><span>No</span></label>
+  </p>
+
+  <p><strong>3. ¿Separas tus residuos?</strong></p>
+  <p>
+    <label><input type="radio" name="reciclaje" value="si"><span>Sí</span></label>
+  </p>
+  <p>
+    <label><input type="radio" name="reciclaje" value="no"><span>No</span></label>
+  </p>
+
+  <p><strong>4. ¿Usas transporte sustentable?</strong></p>
+  <p>
+    <label><input type="radio" name="transporte" value="si"><span>Sí</span></label>
+  </p>
+  <p>
+    <label><input type="radio" name="transporte" value="no"><span>No</span></label>
+  </p>
+
+  <button class="btn green waves-effect" type="submit">
+    Ver resultado
+  </button>
+</form>
+
+{% if resultado == 'verde' %}
+  <div class="card-panel green lighten-4">
+    🌍 Excelente. Vas por buen camino hacia un futuro sostenible.
+  </div>
+{% elif resultado == 'amarillo' %}
+  <div class="card-panel yellow lighten-4">
+    ⚠️ Vas bien, pero aún puedes mejorar tus hábitos.
+  </div>
+{% elif resultado == 'rojo' %}
+  <div class="card-panel red lighten-4">
+    🚨 El planeta necesita cambios urgentes.
+  </div>
+{% endif %}
+
+{% endblock %}
