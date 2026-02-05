@@ -42,7 +42,3 @@ Aqui puedes ver el funcionamiento de la interfaz:
 * **Frontend:** HTML5, CSS3, Materialize CSS.
 * **Iconografía:** Material Design Icons.
 * **Tipografía:** Google Fonts.
-
----
-
-## 🛠️ Instalación y Uso
