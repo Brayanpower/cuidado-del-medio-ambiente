@@ -21,6 +21,9 @@ Aqui puedes ver el funcionamiento de la interfaz:
 
 ### Inicio y Hero Section
 <img width="1855" height="890" alt="image" src="https://github.com/user-attachments/assets/5c801f79-7bad-4fa6-918c-2b4452b46216" />
+<img width="292" height="639" alt="image" src="https://github.com/user-attachments/assets/737025d9-d50f-4c3a-a29c-47c2cbea397a" />
+<img width="290" height="645" alt="image" src="https://github.com/user-attachments/assets/e695dfc4-0cca-415a-825d-ba4d1ce3a407" />
+
 
 *Vista principal con diseño impactante y pilares de conciencia.*
 
