@@ -32,4 +32,5 @@ def tres_r():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # host='0.0.0.0' permite conexiones de otros dispositivos
+    app.run(debug=True, host='0.0.0.0', port=5000)
