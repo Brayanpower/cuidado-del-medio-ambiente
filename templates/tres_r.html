@@ -1,35 +1,72 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3 class="green-text">Las 3 R</h3>
-
+<div class="section center">
+    <h2 class="green-text text-darken-4">Economía Circular: Las 3 R</h2>
+    <p class="flow-text">La base fundamental para una vida residuo cero.</p>
+</div>
 
 <div class="row">
-<div class="col s12 m4">
-<div class="card">
-<div class="card-content center">
-<i class="material-icons icon-large green-text">remove_circle</i>
-<h5>Reducir</h5>
-<p>Consumir solo lo necesario.</p>
-</div>
-</div>
-</div>
-<div class="col s12 m4">
-<div class="card">
-<div class="card-content center">
-<i class="material-icons icon-large green-text">autorenew</i>
-<h5>Reutilizar</h5>
-<p>Dar una segunda vida a los objetos.</p>
-</div>
-</div>
-</div>
-<div class="col s12 m4">
-<div class="card">
-<div class="card-content center">
-<i class="material-icons icon-large green-text">recycling</i>
-<h5>Reciclar</h5>
-<p>Separar residuos correctamente.</p>
-</div>
-</div>
-</div>
+    <div class="col s12 m4">
+        <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light" style="background: #e8f5e9; padding: 20px;">
+                <i class="material-icons large red-text text-lighten-2 center" style="width: 100%;">remove_circle_outline</i>
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><b>Reducir</b><i class="material-icons right">more_vert</i></span>
+                <p>La R más importante. Evita el problema antes de que se cree.</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Estrategias:<i class="material-icons right">close</i></span>
+                <p>Consiste en simplificar el consumo. Ejemplos:</p>
+                <ul>
+                    <li>• Comprar productos sin empaques plásticos.</li>
+                    <li>• Reducir el consumo de energía y agua.</li>
+                    <li>• Evitar el correo basura y suscripciones físicas.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light" style="background: #e3f2fd; padding: 20px;">
+                <i class="material-icons large blue-text center" style="width: 100%;">autorenew</i>
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><b>Reutilizar</b><i class="material-icons right">more_vert</i></span>
+                <p>Alargar la vida útil de cada objeto antes de descartarlo.</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Estrategias:<i class="material-icons right">close</i></span>
+                <p>Dar nuevos usos a las cosas. Ejemplos:</p>
+                <ul>
+                    <li>• Usar frascos de vidrio para almacenar comida.</li>
+                    <li>• Reparar ropa o calzado en lugar de comprar nuevo.</li>
+                    <li>• Donar objetos que ya no usas pero sirven.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light" style="background: #f1f8e9; padding: 20px;">
+                <i class="material-icons large green-text center" style="width: 100%;">recycling</i>
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><b>Reciclar</b><i class="material-icons right">more_vert</i></span>
+                <p>El último recurso. Transformar residuos en materia prima.</p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Estrategias:<i class="material-icons right">close</i></span>
+                <p>Procesar materiales para nuevos productos:</p>
+                <ul>
+                    <li>• Separación correcta (Orgánico, Plástico, Papel).</li>
+                    <li>• Compostaje de residuos orgánicos en casa.</li>
+                    <li>• Llevar pilas y electrónicos a centros de acopio.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

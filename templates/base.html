@@ -1,81 +1,87 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoAcciones</title>
-
-
-<!-- Google Icons & Materialize -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-<style>
-header.hero {
-background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-url('{{ url_for('static', filename='images/ambiente.jpg') }}') center/cover;
-height: 60vh;
-display: flex;
-align-items: center;
-color: white;
-}
-.section-padding { padding: 3rem 0; }
-.icon-large { font-size: 4rem; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAcciones | Liderazgo Ambiental</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        :root { --primary-color: #2e7d32; --secondary-color: #81c784; }
+        body { display: flex; min-height: 100vh; flex-direction: column; background-color: #f4f7f6; font-family: 'Segoe UI', Roboto, sans-serif; }
+        main { flex: 1 0 auto; }
+        /* UX: Navegación fija y limpia */
+        nav { background-color: var(--primary-color) !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .brand-logo { font-weight: 800; letter-spacing: 1px; }
+        /* Breadcrumbs Estilizados */
+        .breadcrumb-wrapper { background: #fff; padding: 10px 0; border-bottom: 1px solid #e0e0e0; margin-bottom: 20px; }
+        .breadcrumb { font-size: 14px; color: #757575 !important; }
+        .breadcrumb:before { color: #bdbdbd !important; }
+        .breadcrumb:last-child { color: var(--primary-color) !important; font-weight: 600; }
+        /* Responsive Hero */
+        header.hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ url_for("static", filename="images/ambiente.jpg") }}') center/cover;
+            min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+        }
+        .btn-large { border-radius: 30px; text-transform: none; font-weight: 600; transition: all 0.3s ease; }
+        .btn-large:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+    </style>
 </head>
 <body>
+    <nav class="navbar-fixed">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo"><i class="material-icons left">eco</i>EcoAcciones</a>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/sistema">SGA</a></li>
+                <li><a href="/futuro">Impacto</a></li>
+                <li><a href="/tres-r">Las 3R</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <ul class="sidenav" id="mobile-nav">
+        <li><div class="user-view"><div class="background green darken-4"></div><span class="white-text name">EcoAcciones</span></div></li>
+        <li><a href="/"><i class="material-icons">home</i>Inicio</a></li>
+        <li><a href="/sistema"><i class="material-icons">settings</i>SGA</a></li>
+        <li><a href="/futuro"><i class="material-icons">shutter_speed</i>Impacto</a></li>
+        <li><a href="/tres-r"><i class="material-icons">recycling</i>3 R</a></li>
+    </ul>
 
-<nav class="green darken-2">
-<div class="nav-wrapper container">
-<a href="/" class="brand-logo">EcoAcciones</a>
-<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-<ul class="right hide-on-med-and-down">
-<li><a href="/">Inicio</a></li>
-<li><a href="/sistema">Sistema</a></li>
-<li><a href="/futuro">Futuro</a></li>
-<li><a href="/tres-r">3 R</a></li>
-</ul>
-</div>
-</nav>
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <a href="/" class="breadcrumb">Inicio</a>
+            {% for item in breadcrumb %}
+            <a href="#!" class="breadcrumb">{{ item }}</a>
+            {% endfor %}
+        </div>
+    </div>
 
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-<ul class="sidenav" id="mobile-demo">
-<li><a href="/">Inicio</a></li>
-<li><a href="/sistema">Sistema</a></li>
-<li><a href="/futuro">Futuro</a></li>
-<li><a href="/tres-r">3 R</a></li>
-</ul>
+    <footer class="page-footer green darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Educación Ambiental Pro</h5>
+                    <p class="grey-text text-lighten-4">Transformando la conciencia individual en cambio sistémico global.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright green darken-3">
+            <div class="container">© 2024 EcoAcciones - UX Sostenible</div>
+        </div>
+    </footer>
 
-
-<div class="container">
-<nav class="green lighten-5">
-<div class="nav-wrapper">
-<div class="col s12">
-{% for item in breadcrumb %}
-<a class="breadcrumb green-text">{{ item }}</a>
-{% endfor %}
-</div>
-</div>
-</nav>
-
-
-{% block content %}{% endblock %}
-</div>
-
-
-<footer class="page-footer green darken-2">
-<div class="container center">
-<p>Cuidar el planeta es responsabilidad de todos 🌱</p>
-</div>
-</footer>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-M.Sidenav.init(document.querySelectorAll('.sidenav'));
-});
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+            M.Tooltip.init(document.querySelectorAll('.tooltipped'));
+        });
+    </script>
 </body>
 </html>
