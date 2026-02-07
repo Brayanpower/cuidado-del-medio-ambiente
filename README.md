@@ -46,8 +46,7 @@ Aqui puedes ver el funcionamiento de la interfaz:
 <img width="290" height="640" alt="image" src="https://github.com/user-attachments/assets/bfc33f77-6046-458c-9c70-2eb02eca9834" />
 <img width="287" height="638" alt="image" src="https://github.com/user-attachments/assets/09011f10-bedf-419e-b9d3-cbcda1e51bfd" />
 <img width="292" height="642" alt="image" src="https://github.com/user-attachments/assets/190ef845-9963-4f66-bb57-586a0f320ced" />
-![WhatsApp Image 2026-02-06 at 9 29 40 PM](https://github.com/user-attachments/assets/4359a955-15c7-4e3a-af10-bfa0946f1537)
-
+<img width="292" height="642" alt="image" src="https://github.com/user-attachments/assets/8267ff16-76d6-4b24-b759-46fd50a1b92a" />
 
 ## 🛠️ Tecnologías Utilizadas
 
