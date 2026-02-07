@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
         mensaje = "Cuidar el planeta es cuidar nuestra vida"
-        return render_template('index.html', breadcrumb=["Inicio"], mensaje=mensaje)
+        return render_template('index.html', breadcrumb=[""], mensaje=mensaje)
 
 
 @app.route('/sistema', methods=['GET', 'POST'])
@@ -16,6 +16,17 @@ def sistema():
     if request.method == 'POST':
         acciones = request.form.getlist('acciones')
     return render_template('sistema.html', breadcrumb=["Inicio", "Sistema Ambiental"], acciones=acciones)
+
+@app.route('/ubicacion')
+def ubicacion():
+    # Coordenadas estratégicas de Dolores Hidalgo
+    recicladoras = [
+        {"nombre": "Recicladora El Relicario", "lat": 21.1685, "lon": -100.9210, "tipo": "Metales", "info": "Cerca de la salida a San Luis"},
+        {"nombre": "Centro de Acopio Ecofila", "lat": 21.1450, "lon": -100.9420, "tipo": "Plásticos", "info": "Col. Lindavista"},
+        {"nombre": "Papelera Hidalgo", "lat": 21.1580, "lon": -100.9350, "tipo": "Papel/Cartón", "info": "Zona Centro"},
+        {"nombre": "Depósito La Cuna", "lat": 21.1720, "lon": -100.9150, "tipo": "Chatarra", "info": "A pie de carretera"}
+    ]
+    return render_template('mapa.html', breadcrumb=["Ubicación"], recicladoras=recicladoras)
 
 
 @app.route('/futuro', methods=['GET', 'POST'])

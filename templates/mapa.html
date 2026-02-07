@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top: 20px;">
+    <div class="card-panel white" style="border-radius: 15px;">
+        <h4 class="green-text text-darken-4 center">
+            <i class="material-icons medium">recycling</i><br>
+            Mapa de Reciclaje: Dolores Hidalgo
+        </h4>
+        <p class="center grey-text">Visualiza los puntos de acopio para el cuidado del medio ambiente en la Cuna de la Independencia.</p>
+        
+        <div id="map" style="height: 550px; width: 100%; border-radius: 12px; border: 3px solid #e8f5e9;"></div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Coordenadas iniciales (Dolores Hidalgo, Gto)
+        var map = L.map('map').setView([21.1561, -100.9307], 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // CONFIGURACIÓN DEL ICONO PASADO (Reciclaje Verde)
+        var recycleIcon = L.icon({
+            iconUrl: 'https://cdn-icons-png.flaticon.com/512/3299/3299935.png',
+            iconSize: [40, 40], // Tamaño del icono
+            iconAnchor: [20, 40], // Punto de anclaje (mitad-abajo)
+            popupAnchor: [0, -35] // Donde sale el globo de texto
+        });
+
+        // Traemos los datos desde el Python (Flask)
+        var puntos = {{ recicladoras | tojson }};
+
+        
+
+        puntos.forEach(function(p) {
+            L.marker([p.lat, p.lon], {icon: recycleIcon}).addTo(map)
+                .bindPopup(`
+                    <div style="text-align: center;">
+                        <b style="color: #2e7d32; font-size: 1.1rem;">${p.nombre}</b><br>
+                        <hr style="border: 0.5px solid #eee; margin: 5px 0;">
+                        <span class="chip green lighten-4">${p.tipo}</span><br>
+                        <small>${p.info}</small>
+                    </div>
+                `);
+        });
+    });
+</script>
+{% endblock %}
