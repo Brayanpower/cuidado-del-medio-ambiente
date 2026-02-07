@@ -36,6 +36,9 @@ Aqui puedes ver el funcionamiento de la interfaz:
 ### Las 3 R
 <img width="1898" height="907" alt="image" src="https://github.com/user-attachments/assets/494e021f-a229-4816-82a0-0384e1eb423b" />
 
+### Mapa de Sitios de reciclaje
+<img width="1872" height="930" alt="image" src="https://github.com/user-attachments/assets/6afd8689-a350-4309-86d8-2fda7eec858c" />
+
 ### Vista desde Movil (Responsividad)
 ---
 <img width="298" height="642" alt="image" src="https://github.com/user-attachments/assets/801747a6-2d5a-4691-9d89-5cf17c1a9ab7" />
